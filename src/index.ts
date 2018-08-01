@@ -2,6 +2,8 @@
     Component created by capivara-cli https://capivarajs.github.io/
 */
 import capivara from 'capivarajs';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import template from './component/counter.template.html';
 import style from './component/counter.style.scss';
 import { CapivaraCounter } from './component/counter.component';

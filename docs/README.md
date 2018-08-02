@@ -1,5 +1,5 @@
 # Introdução
-O componente cp-counter permite escolher um tamanho máximo permitido no campo e também cria um contador de que indica se o número de caracteres do que está no `input`, além de oferecer um contador que demonstra quantos dígitos faltam para alcançar o máximo.
+O componente cp-counter permite escolher um tamanho máximo permitido no campo e também cria um contador que indica quantos dígitos faltam para alcançar o máximo permitido.
 
 ------
 # Instalação
@@ -55,7 +55,7 @@ capivara.controller(document.body, MyController);
 
 ## Parâmetros
 
-O componente possui diversos parâmetros para a customização, a tabela abaixo mostra mais informações sobre eles
+O componente possui alguns parâmetros para a customização, a tabela abaixo mostra mais informações sobre eles
 
 |       Atributo       |   Tipo   | Requerido |                                     Descrição                                     |
 |:--------------------:|:--------:|:---------:|:---------------------------------------------------------------------------------:|

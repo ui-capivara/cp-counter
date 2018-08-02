@@ -11,14 +11,18 @@
 
 <body>
 
-    <cp-counter my-parameter="$ctrl.message"></cp-counter>
+    <cp-counter 
+        capivara-max-length-text="$ctrl.capivaraCounterMaxLength"
+        placeholder-text="$ctrl.placeholderText"
+    ></cp-counter>
 
     <script src="../dist/cp-counter.js"></script>
 
     <script>
         class MyController {
             constructor() {
-                this.message = 'Hello world - CapivaraJS';
+                this.capivaraCounterMaxLength = 20;
+                this.placeholderText = 'Insira aqui...'
             }
         }
         capivara.controller(document.body, MyController);

@@ -16,10 +16,10 @@ export class CapivaraCounter {
 
     $onInit() {
         this.capivaraMaxLength = this.$bindings.capivaraMaxLengthText ? this.$bindings.capivaraMaxLengthText : 10
+        this.placeholder = this.$bindings.placeholderText        
         this.remainingDigits = 0
         this.textRemainigDigits = this.capivaraMaxLength + ' caracteres restantes'
         this.noRemainingDigits = 'Você atingiu o limite de ' + this.capivaraMaxLength + ' caracteres'
-        this.placeholder = 'Ola amigos'
     }
 
     checkStringSize() {

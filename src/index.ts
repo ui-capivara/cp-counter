@@ -33,7 +33,7 @@ const Component = {
      * @name bindings
      * @description Declares the variables that will be accepted by component. See https://capivarajs.github.io/components.html#bindings
      */
-    bindings: ['capivara-max-length-text'],
+    bindings: ['capivaraMaxLengthText', 'placeholderText'],
     /**
      * @name controller
      * @description Sets the scope of the component

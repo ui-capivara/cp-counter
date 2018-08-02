@@ -1,5 +1,5 @@
 # Introdução
-O componente cp-confirm mostra um alerta com confirmação para o usuário antes de realizar alguma ação.
+O componente cp-counter permite escolher um tamanho máximo permitido no campo e também cria um contador de que indica se o número de caracteres do que está no `input`, além de oferecer um contador que demonstra quantos dígitos faltam para alcançar o máximo.
 
 ------
 # Instalação
@@ -8,10 +8,10 @@ O componente cp-confirm mostra um alerta com confirmação para o usuário antes
 Recomendamos vincular a um número de versão específico que você possa atualizar manualmente, porém no exemplo iremos utilizar a ultima versão disponível.
 ```html
 <!-- Stylesheet -->
-<link rel="stylesheet" href="https://unpkg.com/@uicapivara/cp-confirm@latest/dist/cp-confirm.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@uicapivara/cp-counter@latest/dist/cp-counter.min.css">
 
 <!-- Component -->
-<script src="https://unpkg.com/@uicapivara/cp-confirm@latest/dist/cp-confirm.min.js"></script>
+<script src="https://unpkg.com/@uicapivara/cp-counter@latest/dist/cp-counter.min.js"></script>
 ```
 Certifique-se de ler sobre as diferentes construções e use a produção, substituindo os arquivos .js por .min.js. Esta é uma compilação otimizada para velocidade em vez de experiência de desenvolvimento.
 
@@ -19,26 +19,26 @@ Certifique-se de ler sobre as diferentes construções e use a produção, subst
 O NPM é o método de instalação recomendado ao criar aplicativos de grande escala. Ele combina muito bem com bundlers de módulo, como Webpack ou Browserify.
 
 ```shell
-$ npm install @uicapivara/cp-confirm --save
+$ npm install @uicapivara/cp-counter --save
 ```
 Após a instalação, precisamos importar o componente no projeto.
 
 Se seu projeto utiliza **typescript** você pode importar o componente normalmente.
 ```javascript
-import '@uicapivara/cp-confirm';
+import '@uicapivara/cp-counter';
 ```
 Caso contrário é necessário importa-los especificando o arquivo **js**. Exemplo:
 ```javascript
-import '@uicapivara/cp-confirm/index.js';
+import '@uicapivara/cp-counter/index.js';
 ```
 
 # Como usar
 
-Se chegamos até aqui, provavelmente a instalação foi finalizada êxito, isso significa que já podemos utilizar o cp-confirm.
+Se chegamos até aqui, provavelmente a instalação foi finalizada êxito, isso significa que já podemos utilizar o cp-counter.
 Vamos agora criar uma nova instância do componente. Para isso basta colocarmos no HTML o nome do compoente e também uma `class` que possuirá as propriedades de configuração do componente.
 
 ```html
-<cp-confirm capivara-confirm="$ctrl.message" </cp-confirm>
+<cp-counter capivara-confirm="$ctrl.message" </cp-counter>
 ```
 
 ```javascript
@@ -72,7 +72,7 @@ O componente possui diversos parâmetros para a customização, a tabela abaixo 
 Um exemplo de utilização de todos os parâmetros que o componente possui, vale lembrar que o único parâmetro obrigatório é o `capivara-confirm`, todos os outros possuem valores `default`. O exemplo mostra como devemos configurar o componente com as customizações desejadas.
 
 ```html
-<cp-confirm 
+<cp-counter 
     capivara-confirm="$ctrl.message" 
     confirm-button-class="$ctrl.confirmButtonClass" 
     dismiss-button-class="$ctrl.dismissButtonClass"
@@ -80,7 +80,7 @@ Um exemplo de utilização de todos os parâmetros que o componente possui, vale
     confirm-button="$ctrl.confirmButton"
     dismiss-button="$ctrl.dismissButton"
     size="$ctrl.size"
-></cp-confirm>
+></cp-counter>
 ```
 
 ```javascript

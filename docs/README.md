@@ -38,13 +38,13 @@ Se chegamos até aqui, provavelmente a instalação foi finalizada êxito, isso 
 Vamos agora criar uma nova instância do componente. Para isso basta colocarmos no HTML o nome do compoente e também uma `class` que possuirá as propriedades de configuração do componente.
 
 ```html
-<cp-counter capivara-confirm="$ctrl.message" </cp-counter>
+<cp-counter capivara-max-length-text="$ctrl.capivaraCounterMaxLength"> </cp-counter>
 ```
 
 ```javascript
 class MyController {
     constructor() {
-        this.message = 'Tem certeza que deseja deletar?'
+        this.capivaraCounterMaxLength = 20;
     }
 }
 capivara.controller(document.body, MyController);
@@ -59,41 +59,28 @@ O componente possui diversos parâmetros para a customização, a tabela abaixo 
 
 |       Atributo       |   Tipo   | Requerido |                                     Descrição                                     |
 |:--------------------:|:--------:|:---------:|:---------------------------------------------------------------------------------:|
-|   capivara-confirm   | `String` |   `Sim`   | Essa é a mensagem que aparece no cabeçalho do modal                               |
-|         size         | `String` |   `Não`   | Define o tamanho do modal `sm`, `md`, `lg`. `DEFAULT: md`.                        |
-| confirm-button-class | `String` |   `Não`   | Classes que será aplicadas no botão confirmar. `DEFAULT: btn btn-primary`.        |
-| dismiss-button-class | `String` |   `Não`   | Classes que será aplicadas no botão cancelar. `DEFAULT: btn btn-default`.         |
-| delete-button-class  | `String` |   `Não`   | Classes que será aplicadas no botão que chama o modal. `DEFAULT: btn btn-danger`. |
-| confirm-button       | `String` |   `Não`   | Texto do botão confirmar. `DEFAULT: Confirmar`.                                   |
-| dismiss-button       | `String` |   `Não`   | Texto do botão cancelar. `DEFAULT: Retornar`.                                     |
+|   capivara-max-length-text   | `int`    |   `Sim`   | Valor que define o número de caracteres que podem ser inseridos no `input`.   |
+|         placeholder-text     | `String` |   `Não`   | Mensagem que aparece dentro do `input`.                                    |
 
 # Exemplo
 
-Um exemplo de utilização de todos os parâmetros que o componente possui, vale lembrar que o único parâmetro obrigatório é o `capivara-confirm`, todos os outros possuem valores `default`. O exemplo mostra como devemos configurar o componente com as customizações desejadas.
+Um exemplo de utilização de todos os parâmetros que o componente possui, vale lembrar que o único parâmetro obrigatório é o `capivara-max-length-text`. O exemplo mostra como devemos configurar o componente com as customizações desejadas.
 
-```html
-<cp-counter 
-    capivara-confirm="$ctrl.message" 
-    confirm-button-class="$ctrl.confirmButtonClass" 
-    dismiss-button-class="$ctrl.dismissButtonClass"
-    delete-button-class="$ctrl.deleteButtonClass"
-    confirm-button="$ctrl.confirmButton"
-    dismiss-button="$ctrl.dismissButton"
-    size="$ctrl.size"
-></cp-counter>
+```js
+    <cp-counter 
+        capivara-max-length-text="$ctrl.capivaraCounterMaxLength"
+        placeholder-text="$ctrl.placeholderText"
+    ></cp-counter>
 ```
 
-```javascript
-class MyController {
-    constructor() {
-        this.message = 'Tem certeza que deseja deletar?'
-        this.confirmButtonClass = "btn btn-warning"
-        this.dismissButtonClass = "btn btn-danger"
-        this.confirmButton = "Sim"
-        this.dismissButton = "Não"
-        this.size = "lg"
-        this.deleteButtonClass = "btn btn-success"
-    }
-}
-capivara.controller(document.body, MyController);
+```html
+    <script>
+        class MyController {
+            constructor() {
+                this.capivaraCounterMaxLength = 20;
+                this.placeholderText = 'Insira aqui...'
+            }
+        }
+        capivara.controller(document.body, MyController);
+    </script>
 ```

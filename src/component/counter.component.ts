@@ -15,6 +15,10 @@ export class CapivaraCounter {
     }
 
     $onInit() {
+
+        if(!this.$bindings.capivaraMaxLengthText){
+            throw new Error('capivara-max-length-text é um parâmetro obrigatório')
+        }
         this.capivaraMaxLength = this.$bindings.capivaraMaxLengthText ? this.$bindings.capivaraMaxLengthText : 10
         this.placeholder = this.$bindings.placeholderText        
         this.remainingDigits = 0

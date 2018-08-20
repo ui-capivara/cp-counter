@@ -2,31 +2,47 @@
 <html lang="pt">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Demo in CapivaraJS</title>
-    <link rel="stylesheet" href="../dist/cp-counter.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <title>Demo in CapivaraJS</title>
+  <link rel="stylesheet"
+        href="../dist/cp-counter.css" />
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+
+  <style>
+    [padding] { padding: 34px; }
+  </style>
 </head>
 
 <body>
 
-    <cp-counter 
-        capivara-max-length-text="$ctrl.capivaraCounterMaxLength"
-        placeholder-text="$ctrl.placeholderText"
-    ></cp-counter>
+  <div class="container" padding>
+    <div class="row">
+      <div class="col-md-4">
 
-    <script src="../dist/cp-counter.js"></script>
+        <cp-counter cp-model="$ctrl.myText"
+                    max-length="3"
+                    placeholder="'Informe um texto...'"></cp-counter>
 
-    <script>
-        class MyController {
-            constructor() {
-                this.capivaraCounterMaxLength = 20;
-                this.placeholderText = 'Insira aqui...'
-            }
-        }
-        capivara.controller(document.body, MyController);
-    </script>
+      </div>
+    </div>
+  </div>
+
+  <script src="../dist/cp-counter.js"></script>
+
+  <script>
+    class MyController {
+      constructor() {
+        this.myText = 'Example';
+      }
+    }
+    capivara.controller(document.body, MyController);
+  </script>
 
 </body>
 

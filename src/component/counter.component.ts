@@ -1,38 +1,24 @@
 export class CapivaraCounter {
-    public $constants;
-    public $functions;
-    public $bindings;
+  public $constants;
+  public $functions;
+  public $bindings;
 
-    private capivaraMaxLength: number
-    private remainingDigits: number
-    private textRemainigDigits: string
-    private noRemainingDigits: string
-    private placeholder: string
-    private element: HTMLElement
+  constructor(public $scope, public $element) { }
 
-    constructor(private $scope, private $element) {
-        this.element = $element
+  $onInit() {
+    if (!this.$constants.maxLength) {
+      throw new Error('max-length é um parâmetro obrigatório.')
     }
+  }
 
-    $onInit() {
+  $onViewInit() {
+    setTimeout(() => {
+      this.$bindings.cpModel = (this.$bindings.cpModel || '').substring(0, this.$constants.maxLength);
+    });
+  }
 
-        if(!this.$bindings.capivaraMaxLengthText){
-            throw new Error('capivara-max-length-text é um parâmetro obrigatório')
-        }
-        this.capivaraMaxLength = this.$bindings.capivaraMaxLengthText ? this.$bindings.capivaraMaxLengthText : 10
-        this.placeholder = this.$bindings.placeholderText        
-        this.remainingDigits = 0
-        this.textRemainigDigits = this.capivaraMaxLength + ' caracteres restantes'
-        this.noRemainingDigits = 'Você atingiu o limite de ' + this.capivaraMaxLength + ' caracteres'
-    }
+  getRemainingCaracteres() {
+    return this.$constants.maxLength - (this.$bindings.cpModel || '').length;
+  }
 
-    checkStringSize() {
-        this.remainingDigits = this.element.getElementsByTagName('input')[0].value.length
-
-        if (this.remainingDigits < this.capivaraMaxLength) {
-            this.textRemainigDigits = this.capivaraMaxLength - this.remainingDigits + ' caracteres restantes'
-        } else {
-            this.textRemainigDigits = this.noRemainingDigits
-        }
-    }
 }

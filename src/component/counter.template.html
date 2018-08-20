@@ -1,7 +1,13 @@
-<div>
-    <input  type="text" 
-            cp-attr.maxlength="$ctrl.capivaraMaxLength" 
-            class="form-control" cp-keyup="$ctrl.checkStringSize()" 
-            cp-attr.placeholder="$ctrl.placeholder">
-    <p>[[$ctrl.textRemainigDigits]]</p>
+<div class="cp-counter-wrapper">
+  <input type="text"
+         cp-attr.maxlength="$ctrl.$constants.maxLength"
+         cp-model="$ctrl.$bindings.cpModel"
+         class="form-control"
+         cp-attr.placeholder="$ctrl.$constants.placeholder">
+  <p cp-if="$ctrl.getRemainingCaracteres() > 0">
+    [[ $ctrl.getRemainingCaracteres() ]] caracteres restantes.
+  </p>
+  <p cp-else>
+    Você atingiu o limite de [[ $ctrl.$constants.maxLength ]] caracteres.
+  </p>
 </div>

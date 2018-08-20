@@ -38,47 +38,47 @@ Se chegamos até aqui, provavelmente a instalação foi finalizada êxito, isso 
 Vamos agora criar uma nova instância do componente. Para isso basta colocarmos no HTML o nome do compoente e também uma `class` que possuirá as propriedades de configuração do componente.
 
 ```html
-<cp-counter capivara-max-length-text="$ctrl.capivaraCounterMaxLength"> </cp-counter>
+<cp-counter max-length="20" cp-model="$ctrl.myCounter"></cp-counter>
 ```
 
 ```javascript
 class MyController {
     constructor() {
-        this.capivaraCounterMaxLength = 20;
+      this.myCounter = 'Example';
     }
 }
 capivara.controller(document.body, MyController);
 ```
 
-!> Lembre-se de que é necessário colocar o código `JavaScript` dentro de um elemento `<scipt>` no `HTML`.
+!> Lembre-se de que é necessário colocar o código `JavaScript` dentro de um elemento `<script>` no `HTML`.
 
 
 ## Parâmetros
 
 O componente possui alguns parâmetros para a customização, a tabela abaixo mostra mais informações sobre eles
 
-|       Atributo       |   Tipo   | Requerido |                                     Descrição                                     |
-|:--------------------:|:--------:|:---------:|:---------------------------------------------------------------------------------:|
-|   capivara-max-length-text   | `int`    |   `Sim`   | Valor que define o número de caracteres que podem ser inseridos no `input`.   |
-|         placeholder-text     | `String` |   `Não`   | Mensagem que aparece dentro do `input`.                                    |
+| Atributo    | Tipo     | Requerido | Descrição                                                                   |
+| :---------: | :------: | :-------: | :-------------------------------------------------------------------------: |
+| max-length  | `int`    | `Sim`     | Valor que define o número de caracteres que podem ser inseridos no `input`. |
+| placeholder | `String` | `Não`     | Mensagem que aparece dentro do `input`.                                     |
 
 # Exemplo
 
-Um exemplo de utilização de todos os parâmetros que o componente possui, vale lembrar que o único parâmetro obrigatório é o `capivara-max-length-text`. O exemplo mostra como devemos configurar o componente com as customizações desejadas.
+Um exemplo de utilização de todos os parâmetros que o componente possui, vale lembrar que o único parâmetro obrigatório é o `max-length`. O exemplo mostra como devemos configurar o componente com as customizações desejadas.
 
-```js
+```html
     <cp-counter 
-        capivara-max-length-text="$ctrl.capivaraCounterMaxLength"
-        placeholder-text="$ctrl.placeholderText"
+        cp-model="$ctrl.myCounter"
+        max-length="20"
+        placeholder="'Insira seu texto...'"
     ></cp-counter>
 ```
 
-```html
+```js
     <script>
         class MyController {
             constructor() {
-                this.capivaraCounterMaxLength = 20;
-                this.placeholderText = 'Insira aqui...'
+                this.myCounter = 'Example';
             }
         }
         capivara.controller(document.body, MyController);

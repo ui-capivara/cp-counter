@@ -58,9 +58,10 @@ capivara.controller(document.body, MyController);
 O componente possui alguns parâmetros para a customização, a tabela abaixo mostra mais informações sobre eles
 
 | Atributo    | Tipo     | Requerido | Descrição                                                                   |
-| :---------: | :------: | :-------: | :-------------------------------------------------------------------------: |
+| :---------: | :------: | :-------: | :-------------------------------------------------------: |
 | max-length  | `int`    | `Sim`     | Valor que define o número de caracteres que podem ser inseridos no `input`. |
-| placeholder | `String` | `Não`     | Mensagem que aparece dentro do `input`.                                     |
+| placeholder | `String` | `Não`     | Mensagem que aparece dentro do `input`.                   |
+| cp-model    |	`String` |	`Não`	 | Variável que recebe o valor digitado no `input`           |
 
 # Exemplo
 

@@ -50,6 +50,14 @@ class MyController {
 capivara.controller(document.body, MyController);
 ```
 
+Disponibilizamos alguns exemplos utilizando o componente juntamente com outros frameworks.
+
+*   CapivaraJS - [JSFiddle](https://jsfiddle.net/1kbLruyq/125/)
+*   Angular.js - [JSFiddle](https://jsfiddle.net/t0b8xxfj/64/)
+*   Angular - [JSFiddle](https://jsfiddle.net/1hk7knwq/8641/)
+*   Vue.js - [JSFiddle](http://jsfiddle.net/td4v7qqd/247/)
+*   React.js - [JSFiddle](http://jsfiddle.net/td4v7qqd/242/)
+
 !> Lembre-se de que é necessário colocar o código `JavaScript` dentro de um elemento `<script>` no `HTML`.
 
 
@@ -61,6 +69,7 @@ O componente possui alguns parâmetros para a customização, a tabela abaixo mo
 | :---------: | :------: | :-------: | :-------------------------------------------------------------------------: |
 | max-length  | `int`    | `Sim`     | Valor que define o número de caracteres que podem ser inseridos no `input`. |
 | placeholder | `String` | `Não`     | Mensagem que aparece dentro do `input`.                                     |
+| cp-model    |	`String` |	`Não`	 | Variável que recebe o valor digitado no `input`                             |
 
 # Exemplo
 
@@ -78,9 +87,10 @@ Um exemplo de utilização de todos os parâmetros que o componente possui, vale
     <script>
         class MyController {
             constructor() {
-                this.myCounter = 'Example';
+                this.myCounter = '';
             }
         }
         capivara.controller(document.body, MyController);
     </script>
 ```
+Este exemplo pode ser encontrado no [JSFiddle](https://jsfiddle.net/1kbLruyq/123/)

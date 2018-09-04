@@ -52,7 +52,7 @@
   "license": "LGPL-3.0",
   "dependencies": {
     "bootstrap": "^4.1.2",
-    "capivarajs": "^3.6.1",
+    "capivarajs": "^3.10.0",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3"
   }
